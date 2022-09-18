@@ -20,20 +20,33 @@ public class Algorithms
 
             Console.WriteLine(sum);
         }
+	 static double Algoritm_4_1(int[] koff, int kol_koff)
+	    {
+		double pol = 0;
+		double x = 1.5;
+		int kol = 0;
 
-        public static double Algoritm_4(int[] koff, int kol_koff)
+		for (int i = 0; i < kol_koff; i++)
+		{
+		    pol += koff[i] * Math.Pow(x, kol);
+		    kol += 1;
+
+		}
+		return (pol);
+	    }
+        public static double Algoritm_4_2(int[] koff, int kol_koff)
+    {
+        double pol = 0;
+        double x = 1.5;
+
+        for (int i = kol_koff - 1; i >= 0; i--)
         {
-            double pol = 0;
-            double x = 1.5;
+            pol *= x;
+            pol += koff[i];
 
-            for (int i = 0; i <= kol_koff; i++)
-            {
-                pol *= x;
-                pol += koff[i];
-
-            }
-            return (pol);
         }
+        return (pol);
+    }
 
         public static int[] oddEvenSort(int[] arr, int n)
 
@@ -96,5 +109,6 @@ public class Algorithms
         }
     }
 }
+
 
 
